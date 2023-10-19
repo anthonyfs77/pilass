@@ -1,12 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
-    private static Pila pila = new Pila();
-    private static String ultimaExpresion = "";
-    private static String ultimaConversion = "";
-
+ 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Pila pila = new Pila();
         String opcion;
 
         do {
@@ -20,10 +18,10 @@ public class Main {
 
             switch (opcion) {
                 case "1":
-                    introducirExpresion(scanner);
+                    pila.introducirExpresion(scanner);
                     break;
                 case "2":
-                    mostrar();
+                    pila.mostrar();
                     break;
                 case "3":
                     creditos();
@@ -39,33 +37,11 @@ public class Main {
         scanner.close();
     }
 
-    public static void introducirExpresion(Scanner scanner) {
-        System.out.print("Introduzca la expresión en notación infija: ");
-        String expresion = scanner.nextLine();
-
-        if (expresion.length() <= 50) {
-            ultimaExpresion = expresion;
-
-            ultimaConversion = convertirInfijaAPosfija(expresion);
-            System.out.println("Resultado de la conversión: " + ultimaConversion);
-        } else {
-            System.out.println("La expresión no puede superar los 50 caracteres.");
-        }
-    }
-
-    public static String convertirInfijaAPosfija(String infija) {
-        return "Expresión posfija aquí";
-    }
-
-    public static void mostrar() {
-        System.out.println("Última expresión Infija: " + ultimaExpresion);
-        System.out.println("Su conversión a Posfija: " + ultimaConversion);
-    }
 
     public static void creditos() {
         System.out.println("Nombre de la materia: estructura de datos");
-        System.out.println("ANTHONY FUENTES CARRERA 2217017");
-        System.out.println("ABRAHAM ALONSO REYNOSO ");
-        System.out.println("CARLOS GABRIEL ROMERO");
+        System.out.println("ANTHONY FUENTES CARRERA 22170187");
+        System.out.println("ABRAHAM ALONSO REYNOSO 22170060");
+        System.out.println("CARLOS GABRIEL ROMERO 22170145");
     }
 }
